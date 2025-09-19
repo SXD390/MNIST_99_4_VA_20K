@@ -33,31 +33,6 @@ Final result: **99.6% test accuracy** with **14.5K parameters** in just **15 epo
 
 ---
 
-## 🏗️ Final Network Flow (Mermaid Diagram)
-
-```mermaid
-graph TD
-  A[Input 1×28×28] --> B[Conv 3×3 1→16]
-  B --> C[BN+ReLU]
-  C --> D[Conv 3×3 16→16]
-  D --> E[BN+ReLU]
-  E --> F[MaxPool 2×2 28→14]
-  F --> G[1×1 Conv 16→12]
-  G --> H[Dropout 0.05]
-
-  H --> I[Conv 3×3 12→28]
-  I --> J[BN+ReLU]
-  J --> K[Conv 3×3 28→28]
-  K --> L[BN+ReLU]
-  L --> M[MaxPool 2×2 14→7]
-  M --> N[1×1 Conv 28→32]
-  N --> O[Dropout 0.05]
-
-  O --> P[GAP 7×7→1×1]
-  P --> Q[1×1 Conv 32→10]
-  Q --> R[Softmax (via CrossEntropy)]
-```
-
 ---
 
 ## 📐 Layerwise Shape & Channels
